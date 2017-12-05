@@ -29,7 +29,9 @@ bigint Puzzler::addNextTile(const Board  & board) {
 	if( (boardIterator=tmpResults.find(board.key())) != tmpResults.end() ) {
 		depth--;
 		return boardIterator->second;
-	}
+	} // wurden das Board in dieser zusstand schon mal aufgerufen, wenn ja
+	// gib das Ergebnis dieses Aufrufs zurück
+	// ansonsten mache weiter
 
 //	if(tmpResults.count(board) !=0) {
 //			depth--;
@@ -60,7 +62,7 @@ bigint Puzzler::addNextTile(const Board  & board) {
 			}
 		}
 	}
-	tmpResults[board.key()]=tilings;
+	tmpResults[board.key()]=tilings; //zwischenergebnis für akutelles Board speichern
 //	if(tmpResults.size()>10000000) {
 //		tmpResults.clear();
 //	}

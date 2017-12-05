@@ -13,7 +13,8 @@
 #include"Tromino.h"
 #include<map>
 #include "bigInt.h"
-#include <sparsehash/sparse_hash_map>
+#include <functional>
+//#include <sparsehash/sparse_hash_map>
 #include <functional>
 
 template<class T> class MyHash;
@@ -26,7 +27,7 @@ public:
     	vector<int> inhalt=board.showElements();
     	vector<bool> inhalt2;
     	inhalt2.resize(inhalt.size());
-        for(int i=0;i<inhalt.size();++i) {
+        for(unsigned int i=0;i<inhalt.size();++i) {
         	inhalt2[i]=(bool)inhalt[i];
         }
         size_t h=std::hash<std::vector<bool>>()(inhalt2);
